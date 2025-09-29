@@ -38,21 +38,22 @@ console.log("• findIndex() - Index du premier Chinstrap:", indexChinstrap);
 
 // indexOf() - Trouve l'indice d'un élément (comparaison stricte)
 const especies = penguins.map(p => p.species);
-console.log("• indexOf() - Index de 'Gentoo' dans la liste des espèces:", especies.indexOf(/* TODO */));
+console.log("• indexOf() - Index de 'Gentoo' dans la liste des espèces:", especies.indexOf("Gentoo"));
 
 // lastIndexOf() - Trouve le dernier indice d'un élément
-console.log("• lastIndexOf() - Dernier index de 'Adelie':", especies/* TODO */);
+console.log("• lastIndexOf() - Dernier index de 'Adelie':", especies.lastIndexOf("Adelie"));
 
 // includes() - Vérifie si un élément existe dans le tableau
 const iles = penguins.map(p => p.island);
-console.log("• includes() - Île 'Dream' existe-t-elle?", /* TODO */);
+console.log("• includes() - Île 'Dream' existe-t-elle?", iles.includes("Dream"));
 
 // some() - Teste si au moins un élément satisfait une condition
-const auMoinsUnLourd = penguins.some(p => p.body_mass_g != null && /* TODO */);
+const auMoinsUnLourd = penguins.some(p => p.body_mass_g != null && p.body_mass_g > 6000);
 console.log("• some() - Y a-t-il des pingouins > 6000g?", auMoinsUnLourd);
 
 // every() - Teste si tous les éléments satisfent une condition
-const tousOntMasse = penguins.every(/* TODO */);
+const tousOntMasse = penguins.every(p => p.body_mass_g != null && 
+    p.body_mass_g > 0);
 console.log("• every() - Tous ont une masse > 0?", tousOntMasse);
 console.log();
 
