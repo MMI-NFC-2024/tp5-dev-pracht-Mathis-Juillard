@@ -21,7 +21,7 @@ console.log();
 
 // slice() - Extrait une portion du tableau
 console.log("• slice() - Les 3 premiers pingouins:");
-console.log(penguins.slice(/* TODO */).map(p => `${p.species} de ${p.island}`));
+console.log(penguins.slice(0, 3).map(p => `${p.species} de ${p.island}`));
 console.log();
 
 // ===== MÉTHODES DE RECHERCHE ET VÉRIFICATION =====
@@ -29,11 +29,11 @@ console.log();
 console.log("--- MÉTHODES DE RECHERCHE ET VÉRIFICATION ---");
 
 // find() - Trouve le premier élément qui satisfait une condition
-const premierChinstrap = penguins.find(/* TODO */);
+const premierChinstrap = penguins.find((p) => p.species === "Chinstrap");
 console.log("• find() - Premier pingouin Chinstrap:", premierChinstrap?.island);
 
 // findIndex() - Trouve l'indice du premier élément qui satisfait une condition
-const indexChinstrap = penguins.findIndex(/* TODO */);
+const indexChinstrap = penguins.findIndex((p) => p.species === "Chinstrap");
 console.log("• findIndex() - Index du premier Chinstrap:", indexChinstrap);
 
 // indexOf() - Trouve l'indice d'un élément (comparaison stricte)
