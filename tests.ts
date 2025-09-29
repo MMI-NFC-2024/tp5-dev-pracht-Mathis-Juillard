@@ -119,12 +119,12 @@ console.log("--- MÉTHODES DE TRI ---");
 // sort() - Trie les éléments (modifie le tableau original)
 const massesCopie = penguins.slice(0, 5).map(p => p.body_mass_g).filter(m => m != null);
 console.log("• sort() - Masses avant tri:", massesCopie);
-massesCopie.sort((a, b) => /* TODO */); // différence pour tri
+massesCopie.sort((a, b) => a - b); // différence pour tri
 console.log("• sort() - Masses après tri croissant:", massesCopie);
 
 // Tri par espèce
 const pingouinsParEspece = penguins.slice(0, 10).sort((a, b) => 
-    /* TODO */.localeCompare(/* TODO */)
+    a.species.localeCompare(b.species)
 );
 console.log("• sort() - 10 premiers triés par espèce:");
 pingouinsParEspece.forEach(p => console.log(`  ${p.species} - ${p.island}`));
@@ -137,7 +137,7 @@ console.log("--- MÉTHODES D'ITÉRATION ---");
 // forEach() - Exécute une fonction pour chaque élément
 console.log("• forEach() - Affichage des 3 premiers pingouins:");
 penguins.slice(0, 3).forEach((p, index) => {
-    console.log(`  ${index + 1}. ${/* TODO  espece */} de ${/* TODO ile */} (${/* TODO masse */}g)`);
+    console.log(`  ${index + 1}. ${p.species} de ${p.island} (${p.body_mass_g}g)`);
 });
 
 
