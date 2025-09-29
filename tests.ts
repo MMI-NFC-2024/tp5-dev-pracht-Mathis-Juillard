@@ -148,7 +148,7 @@ console.log("--- MÉTHODES DE CONVERSION ---");
 // join() - Joint tous les éléments en une chaîne
 const premiersNoms = penguins.slice(0, 5).map(p => p.species);
 console.log("• join() - Espèces séparées par ' | ':", premiersNoms.join(" | "));
-console.log("• join() - Espèces séparées par des virgules:", /* TODO */);
+console.log("• join() - Espèces séparées par des virgules:", premiersNoms.join(", "));
 
 // toString() - Convertit en chaîne (équivalent à join(','))
 console.log("• toString() - Premières masses:", penguins.slice(0, 3).map(p => p.body_mass_g).toString());
@@ -161,7 +161,7 @@ console.log("--- MÉTHODES DE CONCATÉNATION ---");
 // concat() - Joint des tableaux
 const adelies = penguins.filter(p => p.species === "Adelie").slice(0, 2);
 const chinstraps = penguins.filter(p => p.species === "Chinstrap").slice(0, 2);
-const melange = /* TODO */;
+const melange = adelies.concat(chinstraps);
 console.log("• concat() - Mélange Adelies + Chinstraps:");
 melange.forEach(p => console.log(`  ${p.species} de ${p.island}`));
 console.log();
@@ -173,8 +173,8 @@ console.log("--- MÉTHODES D'APLATISSEMENT ---");
 // flat() - Aplatit les tableaux imbriqués
 const groupesParIle = [
     penguins.filter(p => p.island === "Torgersen").slice(0, 2).map(p => p.species),
-    penguins.filter(p => p.island === "Biscoe").slice(0, 2).map(/* TODO */),
-    penguins.filter(p => p.island === "Dream").slice(0, 2).map(/* TODO */)
+    penguins.filter(p => p.island === "Biscoe").slice(0, 2).map(p => p.species),
+    penguins.filter(p => p.island === "Dream").slice(0, 2).map(p => p.species)
 ];
 console.log("• flat() - Groupes par île avant aplatissement:", groupesParIle);
 console.log("• flat() - Après aplatissement:", groupesParIle.flat());
