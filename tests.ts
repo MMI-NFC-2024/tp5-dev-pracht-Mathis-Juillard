@@ -52,8 +52,7 @@ const auMoinsUnLourd = penguins.some(p => p.body_mass_g != null && p.body_mass_g
 console.log("• some() - Y a-t-il des pingouins > 6000g?", auMoinsUnLourd);
 
 // every() - Teste si tous les éléments satisfent une condition
-const tousOntMasse = penguins.every(p => p.body_mass_g != null && 
-    p.body_mass_g > 0);
+const tousOntMasse = penguins.every(p => p.body_mass_g != null && p.body_mass_g > 0);
 console.log("• every() - Tous ont une masse > 0?", tousOntMasse);
 console.log();
 
