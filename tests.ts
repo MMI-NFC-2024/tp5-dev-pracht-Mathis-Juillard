@@ -186,10 +186,10 @@ console.log("--- STATISTIQUES FINALES ---");
 
 // Calculs statistiques utilisant différentes méthodes
 const masses = penguins.map(p => p.body_mass_g).filter(m => m != null);
-const masseTotaleCalc = masses.reduce((sum, mass) => /* TODO */, 0);
+const masseTotaleCalc = masses.reduce((sum, mass) => sum + mass, 0);
 const masseMoyenne = masseTotaleCalc / masses.length;
 const masseMin = Math.min(...masses);
-const masseMax = /* TODO */;
+const masseMax = Math.max(...masses);
 
 console.log("• Statistiques des masses:");
 console.log(`  - Masse moyenne: ${masseMoyenne.toFixed(1)}g`);
@@ -220,7 +220,7 @@ console.log("\n--- GROUPEMENT AVEC Object.groupBy ---");
 
 // Groupement par île
 console.log("• Object.groupBy() - Répartition par île:");
-const pingouinsParIle = Object.groupBy(penguins, /* TODO */);
+const pingouinsParIle = Object.groupBy(penguins, p => p.island);
 for (const [ile, pingouins] of Object.entries(pingouinsParIle)) {
     console.log(`  ${ile}: ${pingouins?.length || 0} pingouins`);
 }
@@ -234,7 +234,7 @@ const pingouinsParEspeceEtSexe = Object.groupBy(penguins, pingouin =>
 
 // Groupement par sexe
 console.log("\n• Object.groupBy() - Répartition par sexe:");
-const pingouinsParSexe = Object.groupBy(penguins, /* TODO remplacer null par "inconnu" */);
+const pingouinsParSexe = Object.groupBy(penguins, pingouin => pingouin.sex || 'inconnu');
 for (const [sexe, pingouins] of Object.entries(pingouinsParSexe)) {
     console.log(`  ${sexe}: ${pingouins?.length || 0} pingouins`);
 }
